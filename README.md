@@ -14,12 +14,12 @@ Allows you to display your mining data/statistics from Nanopool by using their p
 - Start the script
 
 #Goal
-I did this script because i wanted 
-- To see only usefull data ( To me )
-- To organize the data the way i want it to be
-- Gather other data from other sources in one screen ( not in this particular script but in others i haven't finished yet )
-- To check if statistics computed by nanopool are right by comparing them with the collected data in real time ( It does match btw XD )
-- Mabybe other ideas but i don't yet and i'll let you know when i would have find out =)
+- I did this script because i wanted :
+  - To see only usefull data ( To me )
+  - To organize the data the way i want it to be
+  - Gather other data from other sources in one screen ( not in this particular script but in others i haven't finished yet )
+  - To check if statistics computed by nanopool are right by comparing them with the collected data in real time ( It does match btw XD )
+  - Mabybe other ideas but i don't yet and i'll let you know when i would have find out =)
 
 #Example
 - You can get an overview of the result by opening nanopool.png
