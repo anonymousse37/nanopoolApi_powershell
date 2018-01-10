@@ -6,8 +6,8 @@ cls;
 #USER VAR#########################################################################################################################################################################
 
 #Wallet whitout '0x'
-$wallet = 'you_wallet';
-$payout = 0.2;
+$wallet = '5b2438bd0d2df4494b301ed459d4180c9b1c29e8'
+$payout = 0.2
 #CryptoCurrency you are mining (lowercase only and check on nanopool the associated trigram to your cryptocurrency
 $cc = 'eth'
 
@@ -86,7 +86,7 @@ while (1)
             $index++
         }
         #Case 2 : index = 10000 then we start over
-        ElseIf ( $index -eq 10000 )
+        ElseIf ( $index -eq 100000 )
         {
             $start_over = 'True'
         }
@@ -128,7 +128,6 @@ while (1)
                     $eur_per_mon = $cc_per_mon*$cc_to_eur_nanopool
                     $eur_per_yea = $cc_per_yea*$cc_to_eur_nanopool    
 
-
                     $nanopoolApi_req_02      = 'https://api.nanopool.org/v1/'+ $cc + '/approximated_earnings/' + $hashrate_avg_h06
                     $json_nanopoolApi_req_02 = (Invoke-WebRequest $nanopoolApi_req_02).content | ConvertFrom-Json
                     if ( $json_nanopoolApi_req_02.status -eq 'True' )
@@ -169,7 +168,7 @@ while (1)
         $t_tmp = Get-EpochTime;
         $t_format = new-timespan -seconds ($t_tmp - $date_0)
         'Script running for : ' + $t_format 
-        'ETH to payout = ' + [math]::Round(($payout - $balance_i[$index-1]),3)
+        'ETH to payout = ' + [math]::Round(($payout - $balance_i[$index-1]),5)
         if ( $index -ge 3 )
         {
             $payout_time =  new-timespan -seconds (($payout - $balance_i[$index-1])/$cc_per_sec);
@@ -190,7 +189,7 @@ while (1)
         '' 
         write-host '< CRYPTOCURRENCY STATS >' -foregroundcolor "green"
         'Balance : unconfirmed = ' + $balance_unconfirmed + ' ETH'
-        'Balance : confirmed   = ' + $balance_confirmed + ' ETH'
+        'Balance : confirmed    = ' + $balance_confirmed + ' ETH'
         'Balance : total       = ' +$balance_total + ' ETH'
         '1 ' + $cc + '                 = ' + $cc_to_eur_nanopool + ' €'  
         'Total EUR             = ' + [math]::Round($cc_total_eur,2) + ' €' 
